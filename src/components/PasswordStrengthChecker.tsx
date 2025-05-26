@@ -94,16 +94,16 @@ const PasswordStrengthChecker = () => {
 
   return (
     <div className="space-y-6">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg bg-gray-800 border-gray-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-blue-600" />
+          <CardTitle className="flex items-center gap-2 text-white">
+            <Shield className="h-5 w-5 text-blue-400" />
             Password Strength Analyzer
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="password">Enter your password</Label>
+            <Label htmlFor="password" className="text-gray-200">Enter your password</Label>
             <div className="relative">
               <Input
                 id="password"
@@ -111,11 +111,11 @@ const PasswordStrengthChecker = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Type your password here..."
-                className="pr-10"
+                className="pr-10 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-200"
               >
                 {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>

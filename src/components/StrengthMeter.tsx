@@ -44,11 +44,11 @@ const StrengthMeter = ({ analysis }: StrengthMeterProps) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {getIcon()}
-          <span className={`font-semibold ${analysis.color}`}>
+          <span className={`font-semibold ${analysis.color.replace('text-', 'text-')}`}>
             {analysis.strength}
           </span>
         </div>
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-gray-300">
           {analysis.score}/6 criteria met
         </span>
       </div>
@@ -56,9 +56,9 @@ const StrengthMeter = ({ analysis }: StrengthMeterProps) => {
       <div className="space-y-2">
         <Progress 
           value={progressValue} 
-          className="h-3"
+          className="h-3 bg-gray-700"
         />
-        <div className="flex justify-between text-xs text-gray-500">
+        <div className="flex justify-between text-xs text-gray-400">
           <span>Very Weak</span>
           <span>Very Strong</span>
         </div>
@@ -67,8 +67,8 @@ const StrengthMeter = ({ analysis }: StrengthMeterProps) => {
       {analysis.feedback.length > 0 && (
         <div className="space-y-1">
           {analysis.feedback.map((item, index) => (
-            <div key={index} className="text-sm text-gray-600 flex items-center gap-2">
-              <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div key={index} className="text-sm text-gray-300 flex items-center gap-2">
+              <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
               {item}
             </div>
           ))}

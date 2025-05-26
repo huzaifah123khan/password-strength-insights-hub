@@ -63,22 +63,22 @@ const PasswordAnalysis = ({ analysis }: PasswordAnalysisProps) => {
   ];
 
   return (
-    <Card className="shadow-lg">
+    <Card className="shadow-lg bg-gray-800 border-gray-700">
       <CardHeader>
-        <CardTitle>Security Criteria Analysis</CardTitle>
+        <CardTitle className="text-white">Security Criteria Analysis</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
           {criteriaItems.map((item) => (
-            <div key={item.key} className="flex items-center gap-3 p-2 rounded-lg bg-gray-50">
+            <div key={item.key} className="flex items-center gap-3 p-2 rounded-lg bg-gray-700">
               <div className="flex items-center gap-2 flex-1">
-                {item.icon}
-                <span className="text-sm font-medium">{item.label}</span>
+                <div className="text-gray-300">{item.icon}</div>
+                <span className="text-sm font-medium text-gray-200">{item.label}</span>
               </div>
               {item.met ? (
-                <CheckCircle className="h-5 w-5 text-green-500" />
+                <CheckCircle className="h-5 w-5 text-green-400" />
               ) : (
-                <XCircle className="h-5 w-5 text-red-500" />
+                <XCircle className="h-5 w-5 text-red-400" />
               )}
             </div>
           ))}
